@@ -11,228 +11,12 @@
 
 using namespace std;
 
-//START CLASS AND FUNCTION DECLARATIONS
-
-class Ship
-{
-public:
-    std::string name;
-    int orientation;
-    int positionX;
-    int positionY;
-    int maxLength;
-    int insideLength;
-
-    Ship(int length, int x, int y)
-    {
-
-        orientation = CreateRandom(2) - 1;
-        insideLength = length;
-        if (orientation == 0)
-        {
-            maxLength = (x - length);
-            //cout << "maxLength = " << maxLength << endl;
-
-            positionX = CreateRandom(maxLength);
-            positionY = CreateRandom(y);
-        }
-        else
-        {
-            maxLength = (y - length);
-            //cout << "maxLength = " << maxLength << endl;
-
-            //cout << "insideOrientation = 1\n";
-            positionX = CreateRandom(x);
-            positionY = CreateRandom(maxLength);
-        }
-    }
-    void changeX(int &positionX, int x, int length)
-    {
-        positionX = CreateRandom(x - length);
-        //cout << "position X changed to: " << positionX << endl;
-    }
-
-    void changeY(int &positionY, int y, int length)
-    {
-        positionY = CreateRandom(y - length);
-        //cout << "position Y changed to: " << positionY << endl;
-    }
-    void chageOrientation(int &orientation)
-    {
-        orientation = CreateRandom(2) - 1;
-    }
-
-    void getBattlecruze(vector<vector<char>> &tabble, int x, int y)
-    {
-        //
-        for (int i = 1; i <= x; i++)
-        {
-            for (int j = 0; j <= y; j++)
-            {
-                if (i == this->positionX && j == this->positionY && this->orientation == 0)
-                {
-                    //changing matrix according with boat length
-                    //Aloca verticalmente
-                    for (int k = i; k < i + this->insideLength; k++)
-                    {
-                        tabble[k][j] = 'b';
-                    }
-                }
-                else if (i == this->positionX && j == this->positionY && this->orientation == 1)
-                {
-                    //Aloca horizontalmente
-                    //changing matrix according with boat length
-                    for (int k = j; k < j + this->insideLength; k++)
-                    {
-                        tabble[i][k] = 'b';
-                    }
-                }
-            }
-        }
-    }
-
-    int getDestroyer(vector<vector<char>> &tabble, int x, int y)
-    {
-        //cout << "input destroyer 1" << endl;
-        int flag(0);
-        int count(0);
-        do
-        {
-            for (int i = 1; i <= x; i++)
-            {
-                for (int j = 1; j <= y; j++)
-                {
-                    if (i == this->positionX && j == this->positionY && this->orientation == 0 && tabble[i][j] == '.' && tabble[i + 1][j] == '.' && tabble[i + 2][j] == '.')
-                    {
-                        //vertically
-                        //changing matrix according with boat length
-                        for (int k = i; k < i + this->insideLength; k++)
-                        {
-
-                            tabble[k][j] = 'd';
-                        }
-                        flag = 1;
-                    }
-                    else if (i == this->positionX && j == this->positionY && this->orientation == 1 && tabble[i][j] == '.' && tabble[i][j + 1] == '.' && tabble[i][j + 2] == '.')
-                    {
-                        // cout << "enter second if horizontally" << endl;
-                        //horizontally
-                        //changing matrix according with boat length
-
-                        for (int k = j; k < j + this->insideLength; k++)
-                        {
-                            tabble[i][k] = 'd';
-                        }
-                        flag = 1;
-                    }
-                }
-            }
-            if (flag == 0)
-            {
-                this->changeX(this->positionX, x, this->insideLength);
-                this->changeY(this->positionY, y, this->insideLength);
-                this->chageOrientation(this->orientation);
-            } //put couter to infinite loops
-        } while (flag == 0);
-    }
-
-    int getCruiser(vector<vector<char>> &tabble, int x, int y)
-    {
-        //cout << "input destroyer 1" << endl;
-        int flag(0);
-        do
-        {
-            for (int i = 1; i <= x; i++)
-            {
-                for (int j = 1; j <= y; j++)
-                {
-                    if (i == this->positionX && j == this->positionY && this->orientation == 0 && tabble[i][j] == '.' && tabble[i + 1][j] == '.')
-                    {
-                        //vertically
-                        //changing matrix according with boat length
-                        for (int k = i; k < i + this->insideLength; k++)
-                        {
-
-                            tabble[k][j] = 'd';
-                        }
-                        flag = 1;
-                    }
-                    else if (i == this->positionX && j == this->positionY && this->orientation == 1 && tabble[i][j] == '.' && tabble[i][j + 1] == '.')
-                    {
-                        // cout << "enter second if horizontally" << endl;
-                        //horizontally
-                        //changing matrix according with boat length
-
-                        for (int k = j; k < j + this->insideLength; k++)
-                        {
-                            tabble[i][k] = 'd';
-                        }
-                        flag = 1;
-                    }
-                }
-            }
-            if (flag == 0)
-            {
-                //cout << "change randoms to cruiser" << endl;
-                this->changeX(this->positionX, x, this->insideLength);
-                this->changeY(this->positionY, y, this->insideLength);
-                this->chageOrientation(this->orientation);
-            }
-
-        } while (flag == 0);
-    }
-
-    //PUT SUBMARINE ON TABBLE
-    void getSubmarine(vector<vector<char>> &tabble, int x, int y)
-    {
-        //cout << "input destroyer 1" << endl;
-        int flag(0);
-        do
-        {
-            for (int i = 1; i <= x; i++)
-            {
-                for (int j = 1; j <= y; j++)
-                {
-                    if (i == this->positionX && j == this->positionY && this->orientation == 0 && tabble[i][j] == '.')
-                    {
-                        //vertically
-                        //changing matrix according with boat length
-                        for (int k = i; k < i + this->insideLength; k++)
-                        {
-
-                            tabble[k][j] = 'd';
-                        }
-                        flag = 1;
-                    }
-                    else if (i == this->positionX && j == this->positionY && this->orientation == 1 && tabble[i][j] == '.')
-                    {
-                        // cout << "enter second if horizontally" << endl;
-                        //horizontally
-                        //changing matrix according with boat length
-
-                        for (int k = j; k < j + this->insideLength; k++)
-                        {
-                            tabble[i][k] = 'd';
-                        }
-                        flag = 1;
-                    }
-                }
-            }
-            if (flag == 0)
-            {
-                this->changeX(this->positionX, x, this->insideLength);
-                this->changeY(this->positionY, y, this->insideLength);
-            }
-        } while (flag == 0);
-    }
-};
-
-//START MAIN FUNCTION
 int main(int argc, char *argv[])
 {
     //VERIFYING MAIN PARAMETERS
     if (!verifyArgs(argc, 1, 6))
     {
+        Help();
         return 0;
     };
 
@@ -242,7 +26,7 @@ int main(int argc, char *argv[])
     //CHANGING ARG VALUES TO_LOWER
     //ideal era converter string to char*
 
-    //STARTING VERIFICATION FOR MAIN PARAMETERS
+    //STARTING VERIFICATION FOR MAIN ARGS
     for (int i = 1; i < argc; i++)
     {
         params[i] = str_tolower(argv[i]);
@@ -293,18 +77,14 @@ int main(int argc, char *argv[])
             return 0;
         }
     }
+    //END VERIFICATION FOR MAIN PARAMETERS
+
     srand(time(NULL));
 
-    // verificação de parâmetros
-    // std::cout << "N=" << n << endl;
-    // std::cout << "X=" << x << endl;
-    // std::cout << "Y=" << y << endl;
-
-    //MATRIX DECLARATION
-
+    //tabble declaration
     vector<vector<char>> tabble(x + 2, vector<char>(y + 2));
-    //defining shadow tabble
 
+    //defining shadow tabble
     for (int i = 0; i < x + 2; i++)
     {
         for (int j = 0; j < y + 2; j++)
@@ -322,7 +102,7 @@ int main(int argc, char *argv[])
     }
     for (int rf = 0; rf < n; rf++)
     {
-        //defining objects
+        //defining Ships
         Ship firstShip(4, x, y);
         Ship destroyer1(3, x, y);
         Ship destroyer2(3, x, y);
@@ -334,16 +114,9 @@ int main(int argc, char *argv[])
         Ship submarine3(1, x, y);
         Ship submarine4(1, x, y);
 
-        //Print boat informations
-        // cout << "input battleship" << endl;
-        // cout << "X position = " << firstShip.positionX << endl;
-        // cout << "Y position = " << firstShip.positionY << endl;
-        // cout << "Orientation = " << firstShip.orientation << endl;
-
-        //Input BATTLESHIP boats on tablle
+        //Input Ships on tabble
         firstShip.getBattlecruze(tabble, x, y);
         shadowsAround(tabble, firstShip.orientation, firstShip.insideLength, x, y, 'b');
-        //INPUT DESTROYERS ON TABLE
 
         destroyer1.getDestroyer(tabble, x, y);
         shadowsAround(tabble, destroyer1.orientation, destroyer1.insideLength, x, y, 'd');
@@ -366,6 +139,7 @@ int main(int argc, char *argv[])
         shadowsAround(tabble, submarine3.orientation, submarine3.insideLength, x, y, 'd');
         submarine4.getSubmarine(tabble, x, y);
         shadowsAround(tabble, submarine4.orientation, submarine4.insideLength, x, y, 'd');
+
         //PRINTING TABBLE
         //This print eliminate first
         if (y > 9)
@@ -419,10 +193,6 @@ int main(int argc, char *argv[])
         }
         std::cout << endl;
     }
-    printTest();
-    Barco barquinho;
-    // barquinho.i = 0;
-    barquinho.getTamanho();
 
     return 0;
 }
