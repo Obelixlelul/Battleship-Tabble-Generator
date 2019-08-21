@@ -1,4 +1,4 @@
-# Install script for directory: /home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0
+# Install script for directory: /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

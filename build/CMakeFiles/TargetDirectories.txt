@@ -1,3 +1,3 @@
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/CMakeFiles/rebuild_cache.dir
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/CMakeFiles/bpg.dir
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/CMakeFiles/edit_cache.dir
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/rebuild_cache.dir
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/bpg.dir
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/edit_cache.dir

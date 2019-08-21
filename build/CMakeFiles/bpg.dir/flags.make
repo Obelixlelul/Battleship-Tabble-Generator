@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include" 
+CXX_INCLUDES = -I/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include 
 

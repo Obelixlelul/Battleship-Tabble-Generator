@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0"
+CMAKE_SOURCE_DIR = /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build"
+CMAKE_BINARY_DIR = /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/CMakeFiles" "/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ bpg: cmake_check_build_system
 bpg/fast:
 	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/build
 .PHONY : bpg/fast
+
+src/Ship.o: src/Ship.cpp.o
+
+.PHONY : src/Ship.o
+
+# target to build an object file
+src/Ship.cpp.o:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Ship.cpp.o
+.PHONY : src/Ship.cpp.o
+
+src/Ship.i: src/Ship.cpp.i
+
+.PHONY : src/Ship.i
+
+# target to preprocess a source file
+src/Ship.cpp.i:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Ship.cpp.i
+.PHONY : src/Ship.cpp.i
+
+src/Ship.s: src/Ship.cpp.s
+
+.PHONY : src/Ship.s
+
+# target to generate assembly for a file
+src/Ship.cpp.s:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Ship.cpp.s
+.PHONY : src/Ship.cpp.s
 
 src/battleship.o: src/battleship.cpp.o
 
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... bpg"
 	@echo "... edit_cache"
+	@echo "... src/Ship.o"
+	@echo "... src/Ship.i"
+	@echo "... src/Ship.s"
 	@echo "... src/battleship.o"
 	@echo "... src/battleship.i"
 	@echo "... src/battleship.s"

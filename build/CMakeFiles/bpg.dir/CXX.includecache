@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
 
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/src/battleship.cpp
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
+
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Ship.cpp
 iostream
 -
 iomanip
@@ -26,9 +28,11 @@ stdlib.h
 time.h
 -
 ../include/battleship.h
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
+../include/Ship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
 
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/src/main.cpp
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/battleship.cpp
 iostream
 -
 iomanip
@@ -46,5 +50,27 @@ stdlib.h
 time.h
 -
 ../include/battleship.h
-/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
+
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/main.cpp
+iostream
+-
+iomanip
+-
+string.h
+-
+ctype.h
+-
+vector
+-
+algorithm
+-
+stdlib.h
+-
+time.h
+-
+../include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
+../include/Ship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
 
