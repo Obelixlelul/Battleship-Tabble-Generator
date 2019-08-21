@@ -1,0 +1,50 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include/battleship.h
+
+/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/src/battleship.cpp
+iostream
+-
+iomanip
+-
+string.h
+-
+ctype.h
+-
+vector
+-
+algorithm
+-
+stdlib.h
+-
+time.h
+-
+../include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include/battleship.h
+
+/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/src/main.cpp
+iostream
+-
+iomanip
+-
+string.h
+-
+ctype.h
+-
+vector
+-
+algorithm
+-
+stdlib.h
+-
+time.h
+-
+../include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/battleship-puzzle-generator 1.0/include/battleship.h
+
