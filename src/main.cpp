@@ -7,69 +7,11 @@
 #include <stdlib.h> /* srand, rand */
 #include <time.h>   /* time */
 #include "../include/battleship.h"
+#include "../include/Ship.h"
 
 using namespace std;
 
 //START CLASS AND FUNCTION DECLARATIONS
-
-void shadowsAround(vector<vector<char>> &tabble, int orientation, int length, int x, int y, char name)
-{
-    //cout << "Call shadows around\n";
-    //print shadows around
-    int flag = 0;
-    for (int i = 1; i <= x; i++)
-    {
-        for (int j = 1; j <= y; j++)
-        {
-            if (tabble[i][j] == name)
-            {
-                if (orientation == 0)
-                {
-                    if (flag == 0)
-                    {
-                        tabble[i - 1][j] = 'x';
-                        tabble[i + length][j] = 'x';
-                        flag = 1;
-                    }
-                    //vertically
-                    tabble[i][j - 1] = 'x';
-                    tabble[i][j + 1] = 'x';
-                    tabble[i + 1][j + 1] = 'x';
-                    tabble[i + 1][j - 1] = 'x';
-                    tabble[i - 1][j + 1] = 'x';
-                    tabble[i - 1][j - 1] = 'x';
-                }
-                else
-                {
-                    if (flag == 0)
-                    {
-                        tabble[i][j - 1] = 'x';
-                        tabble[i][j + length] = 'x';
-                        flag = 1;
-                    }
-                    //horizontally
-                    tabble[i - 1][j] = 'x';
-                    tabble[i + 1][j] = 'x';
-                    tabble[i + 1][j + 1] = 'x';
-                    tabble[i + 1][j - 1] = 'x';
-                    tabble[i - 1][j - 1] = 'x';
-                    tabble[i - 1][j + 1] = 'x';
-                }
-            }
-        }
-    }
-    //render
-    for (int i = 1; i <= x; i++)
-    {
-        for (int j = 0; j <= y; j++)
-        {
-            if (tabble[i][j] == name)
-            {
-                tabble[i][j] = 'n';
-            }
-        }
-    }
-}
 
 class Ship
 {
@@ -81,10 +23,6 @@ public:
     int maxLength;
     int insideLength;
 
-    Ship()
-    {
-        std::cout << "Input Ship with paramethers" << endl;
-    }
     Ship(int length, int x, int y)
     {
 
@@ -123,6 +61,7 @@ public:
     {
         orientation = CreateRandom(2) - 1;
     }
+
     void getBattlecruze(vector<vector<char>> &tabble, int x, int y)
     {
         //
@@ -151,6 +90,7 @@ public:
             }
         }
     }
+
     int getDestroyer(vector<vector<char>> &tabble, int x, int y)
     {
         //cout << "input destroyer 1" << endl;
@@ -195,6 +135,7 @@ public:
             } //put couter to infinite loops
         } while (flag == 0);
     }
+
     int getCruiser(vector<vector<char>> &tabble, int x, int y)
     {
         //cout << "input destroyer 1" << endl;
@@ -285,7 +226,6 @@ public:
         } while (flag == 0);
     }
 };
-//END FUNCTION DECLARATIONS
 
 //START MAIN FUNCTION
 int main(int argc, char *argv[])
@@ -479,5 +419,10 @@ int main(int argc, char *argv[])
         }
         std::cout << endl;
     }
+    printTest();
+    Barco barquinho;
+    // barquinho.i = 0;
+    barquinho.getTamanho();
+
     return 0;
 }
