@@ -40,7 +40,6 @@ int verifyArgs(int argc, int min, int max)
 {
     if (argc == min || argc > max)
     {
-        printf("Quantidade de argumentos inválida!\n");
         Help();
         return 0;
     }
@@ -99,7 +98,7 @@ void shadowsAround(std::vector<std::vector<char>> &tabble, int orientation, int 
             }
         }
     }
-    //render
+    //render chars to n
     for (int i = 1; i <= x; i++)
     {
         for (int j = 0; j <= y; j++)

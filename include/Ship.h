@@ -8,7 +8,7 @@ public:
   void getBattlecruze(std::vector<std::vector<char>> &tabble, int x, int y);
   int getDestroyer(std::vector<std::vector<char>> &tabble, int x, int y);
   int getCruiser(std::vector<std::vector<char>> &tabble, int x, int y);
-  void getSubmarine(std::vector<std::vector<char>> &tabble, int x, int y);
+  int getSubmarine(std::vector<std::vector<char>> &tabble, int x, int y);
 
   std::string name;
   int orientation;

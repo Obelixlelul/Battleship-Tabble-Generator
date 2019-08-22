@@ -8,6 +8,7 @@
 #include <time.h>   /* time */
 #include "../include/battleship.h"
 #include "../include/Ship.h"
+#include "../include/Tabble.h"
 
 using namespace std;
 
@@ -46,7 +47,9 @@ void Ship::chageOrientation(int &orientation)
 
 void Ship::getBattlecruze(std::vector<std::vector<char>> &tabble, int x, int y)
 {
-  //
+  this->changeX(this->positionX, x, this->insideLength);
+  this->changeY(this->positionY, y, this->insideLength);
+  this->chageOrientation(this->orientation);
   for (int i = 1; i <= x; i++)
   {
     for (int j = 0; j <= y; j++)
@@ -88,7 +91,6 @@ int Ship::getDestroyer(std::vector<std::vector<char>> &tabble, int x, int y)
           //changing matrix according with boat length
           for (int k = i; k < i + this->insideLength; k++)
           {
-
             tabble[k][j] = 'd';
           }
           flag = 1;
@@ -112,14 +114,21 @@ int Ship::getDestroyer(std::vector<std::vector<char>> &tabble, int x, int y)
       this->changeX(this->positionX, x, this->insideLength);
       this->changeY(this->positionY, y, this->insideLength);
       this->chageOrientation(this->orientation);
+      count++;
     } //put couter to infinite loops
+    if (count > 10000)
+    {
+      return 0;
+    }
   } while (flag == 0);
+  return 1;
 }
 
 int Ship::getCruiser(vector<vector<char>> &tabble, int x, int y)
 {
   //cout << "input destroyer 1" << endl;
   int flag(0);
+  int count(0);
   do
   {
     for (int i = 1; i <= x; i++)
@@ -157,16 +166,23 @@ int Ship::getCruiser(vector<vector<char>> &tabble, int x, int y)
       this->changeX(this->positionX, x, this->insideLength);
       this->changeY(this->positionY, y, this->insideLength);
       this->chageOrientation(this->orientation);
+      count++;
+    }
+    if (count > 10000)
+    {
+      return 0;
     }
 
   } while (flag == 0);
+  return 1;
 }
 
 //PUT SUBMARINE ON TABBLE
-void Ship::getSubmarine(std::vector<std::vector<char>> &tabble, int x, int y)
+int Ship::getSubmarine(std::vector<std::vector<char>> &tabble, int x, int y)
 {
   //cout << "input destroyer 1" << endl;
   int flag(0);
+  int count(0);
   do
   {
     for (int i = 1; i <= x; i++)
@@ -202,6 +218,12 @@ void Ship::getSubmarine(std::vector<std::vector<char>> &tabble, int x, int y)
     {
       this->changeX(this->positionX, x, this->insideLength);
       this->changeY(this->positionY, y, this->insideLength);
+      count++;
+    }
+    if (count > 10000)
+    {
+      return 0;
     }
   } while (flag == 0);
+  return 1;
 }

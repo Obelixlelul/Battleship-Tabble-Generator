@@ -8,6 +8,7 @@
 #include <time.h>   /* time */
 #include "../include/battleship.h"
 #include "../include/Ship.h"
+#include "../include/Tabble.h"
 
 using namespace std;
 
@@ -82,7 +83,7 @@ int main(int argc, char *argv[])
     srand(time(NULL));
 
     //tabble declaration
-    vector<vector<char>> tabble(x + 2, vector<char>(y + 2));
+    std::vector<std::vector<char>> tabble(x + 2, std::vector<char>(y + 2));
 
     //defining shadow tabble
     for (int i = 0; i < x + 2; i++)
@@ -100,7 +101,10 @@ int main(int argc, char *argv[])
             tabble[i][j] = '.';
         }
     }
-    for (int rf = 0; rf < n; rf++)
+
+    int varTemp(0);
+
+    for (int qt = 0; qt < n; qt++)
     {
         //defining Ships
         Ship firstShip(4, x, y);
@@ -115,84 +119,86 @@ int main(int argc, char *argv[])
         Ship submarine4(1, x, y);
 
         //Input Ships on tabble
-        firstShip.getBattlecruze(tabble, x, y);
-        shadowsAround(tabble, firstShip.orientation, firstShip.insideLength, x, y, 'b');
-
-        destroyer1.getDestroyer(tabble, x, y);
-        shadowsAround(tabble, destroyer1.orientation, destroyer1.insideLength, x, y, 'd');
-
-        destroyer2.getDestroyer(tabble, x, y);
-        shadowsAround(tabble, destroyer2.orientation, destroyer2.insideLength, x, y, 'd');
-
-        cruizer1.getCruiser(tabble, x, y);
-        shadowsAround(tabble, cruizer1.orientation, cruizer1.insideLength, x, y, 'd');
-        cruizer2.getCruiser(tabble, x, y);
-        shadowsAround(tabble, cruizer2.orientation, cruizer2.insideLength, x, y, 'd');
-        cruizer3.getCruiser(tabble, x, y);
-        shadowsAround(tabble, cruizer3.orientation, cruizer3.insideLength, x, y, 'd');
-
-        submarine1.getSubmarine(tabble, x, y);
-        shadowsAround(tabble, submarine1.orientation, submarine1.insideLength, x, y, 'd');
-        submarine2.getSubmarine(tabble, x, y);
-        shadowsAround(tabble, submarine2.orientation, submarine2.insideLength, x, y, 'd');
-        submarine3.getSubmarine(tabble, x, y);
-        shadowsAround(tabble, submarine3.orientation, submarine3.insideLength, x, y, 'd');
-        submarine4.getSubmarine(tabble, x, y);
-        shadowsAround(tabble, submarine4.orientation, submarine4.insideLength, x, y, 'd');
-
-        //PRINTING TABBLE
-        //This print eliminate first
-        if (y > 9)
+        cout << "TABULEIRO: " << qt + 1 << endl;
+        varTemp = 0;
+        while (varTemp == 0)
         {
-            cout << "    ";
-            for (int i = 0; i < y; i++)
-            {
-                if (i / 9 == 0 || y == 9)
-                {
-                    std::cout << std::right << std::setw(1) << " "
-                              << " ";
-                }
-                else if (i / 9 == 1)
-                {
-                    std::cout << std::right << std::setw(1) << "1"
-                              << " ";
-                }
-            }
-            std::cout << std::endl;
-        }
+            // cout << "restart...\n";
+            firstShip.getBattlecruze(tabble, x, y);
+            shadowsAround(tabble, firstShip.orientation, firstShip.insideLength, x, y, 'b');
 
-        cout << "    ";
-        for (int i = 0; i < y; i++)
-        {
-            if (i > 8)
-            {
-                std::cout << std::right << std::setw(1) << i % 9 << " ";
-            }
-            else
-            {
-                std::cout << std::right << std::setw(1) << i + 1 << " ";
-            }
-        }
-        std::cout << std::endl;
-
-        //PRINTING ROWS INDEXES AND NO-SHIP TABBLE
-        for (int i = 1; i <= x; i++)
-        {
-            std::cout << std::right << std::setw(2) << i << "[";
-            //std::cout << " " << i+1 << "[ ";
-            for (int j = 1; j <= y; j++)
+            varTemp = destroyer1.getDestroyer(tabble, x, y);
+            if (varTemp == 0)
             {
 
-                if (tabble[i][j] == 'x') //delet shadows
-                {
-                    tabble[i][j] = '.';
-                }
-                std::cout << std::right << std::setw(2) << tabble[i][j];
+                CleanTabble(tabble, x, y);
+                continue;
             }
-            std::cout << " ]" << std::endl;
+            shadowsAround(tabble, destroyer1.orientation, destroyer1.insideLength, x, y, 'd');
+
+            varTemp = destroyer2.getDestroyer(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, destroyer2.orientation, destroyer2.insideLength, x, y, 'd');
+
+            varTemp = cruizer1.getCruiser(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, cruizer1.orientation, cruizer1.insideLength, x, y, 'd');
+            varTemp = cruizer2.getCruiser(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, cruizer2.orientation, cruizer2.insideLength, x, y, 'd');
+            varTemp = cruizer3.getCruiser(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, cruizer3.orientation, cruizer3.insideLength, x, y, 'd');
+
+            varTemp = submarine1.getSubmarine(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, submarine1.orientation, submarine1.insideLength, x, y, 'd');
+            varTemp = submarine2.getSubmarine(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, submarine2.orientation, submarine2.insideLength, x, y, 'd');
+            varTemp = submarine3.getSubmarine(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, submarine3.orientation, submarine3.insideLength, x, y, 'd');
+            varTemp = submarine4.getSubmarine(tabble, x, y);
+            if (varTemp == 0)
+            {
+                CleanTabble(tabble, x, y);
+                continue;
+            }
+            shadowsAround(tabble, submarine4.orientation, submarine4.insideLength, x, y, 'd');
+
+            varTemp = 1;
         }
-        std::cout << endl;
+        PrintTabble(tabble, x, y);
+        CleanTabble(tabble, x, y);
     }
-
     return 0;
 }
