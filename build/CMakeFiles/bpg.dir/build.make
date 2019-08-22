@@ -81,9 +81,33 @@ CMakeFiles/bpg.dir/src/Ship.cpp.o.provides: CMakeFiles/bpg.dir/src/Ship.cpp.o.re
 CMakeFiles/bpg.dir/src/Ship.cpp.o.provides.build: CMakeFiles/bpg.dir/src/Ship.cpp.o
 
 
+CMakeFiles/bpg.dir/src/Tabble.cpp.o: CMakeFiles/bpg.dir/flags.make
+CMakeFiles/bpg.dir/src/Tabble.cpp.o: ../src/Tabble.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/bpg.dir/src/Tabble.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bpg.dir/src/Tabble.cpp.o -c /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Tabble.cpp
+
+CMakeFiles/bpg.dir/src/Tabble.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bpg.dir/src/Tabble.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Tabble.cpp > CMakeFiles/bpg.dir/src/Tabble.cpp.i
+
+CMakeFiles/bpg.dir/src/Tabble.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bpg.dir/src/Tabble.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Tabble.cpp -o CMakeFiles/bpg.dir/src/Tabble.cpp.s
+
+CMakeFiles/bpg.dir/src/Tabble.cpp.o.requires:
+
+.PHONY : CMakeFiles/bpg.dir/src/Tabble.cpp.o.requires
+
+CMakeFiles/bpg.dir/src/Tabble.cpp.o.provides: CMakeFiles/bpg.dir/src/Tabble.cpp.o.requires
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Tabble.cpp.o.provides.build
+.PHONY : CMakeFiles/bpg.dir/src/Tabble.cpp.o.provides
+
+CMakeFiles/bpg.dir/src/Tabble.cpp.o.provides.build: CMakeFiles/bpg.dir/src/Tabble.cpp.o
+
+
 CMakeFiles/bpg.dir/src/battleship.cpp.o: CMakeFiles/bpg.dir/flags.make
 CMakeFiles/bpg.dir/src/battleship.cpp.o: ../src/battleship.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/bpg.dir/src/battleship.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/bpg.dir/src/battleship.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bpg.dir/src/battleship.cpp.o -c /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/battleship.cpp
 
 CMakeFiles/bpg.dir/src/battleship.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/bpg.dir/src/battleship.cpp.o.provides.build: CMakeFiles/bpg.dir/src/b
 
 CMakeFiles/bpg.dir/src/main.cpp.o: CMakeFiles/bpg.dir/flags.make
 CMakeFiles/bpg.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/bpg.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/bpg.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bpg.dir/src/main.cpp.o -c /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/main.cpp
 
 CMakeFiles/bpg.dir/src/main.cpp.i: cmake_force
@@ -132,6 +156,7 @@ CMakeFiles/bpg.dir/src/main.cpp.o.provides.build: CMakeFiles/bpg.dir/src/main.cp
 # Object files for target bpg
 bpg_OBJECTS = \
 "CMakeFiles/bpg.dir/src/Ship.cpp.o" \
+"CMakeFiles/bpg.dir/src/Tabble.cpp.o" \
 "CMakeFiles/bpg.dir/src/battleship.cpp.o" \
 "CMakeFiles/bpg.dir/src/main.cpp.o"
 
@@ -139,11 +164,12 @@ bpg_OBJECTS = \
 bpg_EXTERNAL_OBJECTS =
 
 bpg: CMakeFiles/bpg.dir/src/Ship.cpp.o
+bpg: CMakeFiles/bpg.dir/src/Tabble.cpp.o
 bpg: CMakeFiles/bpg.dir/src/battleship.cpp.o
 bpg: CMakeFiles/bpg.dir/src/main.cpp.o
 bpg: CMakeFiles/bpg.dir/build.make
 bpg: CMakeFiles/bpg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bpg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bpg"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bpg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -152,6 +178,7 @@ CMakeFiles/bpg.dir/build: bpg
 .PHONY : CMakeFiles/bpg.dir/build
 
 CMakeFiles/bpg.dir/requires: CMakeFiles/bpg.dir/src/Ship.cpp.o.requires
+CMakeFiles/bpg.dir/requires: CMakeFiles/bpg.dir/src/Tabble.cpp.o.requires
 CMakeFiles/bpg.dir/requires: CMakeFiles/bpg.dir/src/battleship.cpp.o.requires
 CMakeFiles/bpg.dir/requires: CMakeFiles/bpg.dir/src/main.cpp.o.requires
 

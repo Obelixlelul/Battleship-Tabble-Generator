@@ -150,6 +150,33 @@ src/Ship.cpp.s:
 	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Ship.cpp.s
 .PHONY : src/Ship.cpp.s
 
+src/Tabble.o: src/Tabble.cpp.o
+
+.PHONY : src/Tabble.o
+
+# target to build an object file
+src/Tabble.cpp.o:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Tabble.cpp.o
+.PHONY : src/Tabble.cpp.o
+
+src/Tabble.i: src/Tabble.cpp.i
+
+.PHONY : src/Tabble.i
+
+# target to preprocess a source file
+src/Tabble.cpp.i:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Tabble.cpp.i
+.PHONY : src/Tabble.cpp.i
+
+src/Tabble.s: src/Tabble.cpp.s
+
+.PHONY : src/Tabble.s
+
+# target to generate assembly for a file
+src/Tabble.cpp.s:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/Tabble.cpp.s
+.PHONY : src/Tabble.cpp.s
+
 src/battleship.o: src/battleship.cpp.o
 
 .PHONY : src/battleship.o
@@ -216,6 +243,9 @@ help:
 	@echo "... src/Ship.o"
 	@echo "... src/Ship.i"
 	@echo "... src/Ship.s"
+	@echo "... src/Tabble.o"
+	@echo "... src/Tabble.i"
+	@echo "... src/Tabble.s"
 	@echo "... src/battleship.o"
 	@echo "... src/battleship.i"
 	@echo "... src/battleship.s"

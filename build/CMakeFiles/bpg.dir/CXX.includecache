@@ -8,6 +8,8 @@
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
 
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Tabble.h
+
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Ship.cpp
@@ -31,6 +33,32 @@ time.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
 ../include/Ship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
+../include/Tabble.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Tabble.h
+
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Tabble.cpp
+iostream
+-
+iomanip
+-
+string.h
+-
+ctype.h
+-
+vector
+-
+algorithm
+-
+stdlib.h
+-
+time.h
+-
+../include/battleship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
+../include/Ship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
+../include/Tabble.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Tabble.h
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/battleship.cpp
 iostream
@@ -73,4 +101,6 @@ time.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/battleship.h
 ../include/Ship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Ship.h
+../include/Tabble.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/include/Tabble.h
 
