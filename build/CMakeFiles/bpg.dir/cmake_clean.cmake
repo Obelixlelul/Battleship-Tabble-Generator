@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/bpg.dir/src/MainVerification.cpp.o"
   "CMakeFiles/bpg.dir/src/Ship.cpp.o"
   "CMakeFiles/bpg.dir/src/Tabble.cpp.o"
   "CMakeFiles/bpg.dir/src/battleship.cpp.o"

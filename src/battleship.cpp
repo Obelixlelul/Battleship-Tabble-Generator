@@ -7,22 +7,11 @@
 #include <stdlib.h> /* srand, rand */
 #include <time.h>   /* time */
 #include "../include/battleship.h"
+#include "../include/Ship.h"
+#include "../include/Tabble.h"
+#include "../include/MainVerification.h"
 
 using namespace std;
-
-//--HELP FUCNTION
-void Help()
-{
-    cout << " ..:::bpg ERROR::::..\
-    \n Usage: [<options>] <number_of_puzzles> Program options are:\
-    \n --rows <num> Specify the number of rows for the matrix, with `<num>` in the range [7, 16 ]. \
-    \n The default value is 10.\
-    \n --cols <num> Specify the number of columns for the matrix, with `<num>` in the range [7,16]. \
-    \n The default value is 10.\
-    \n Requested input is:\
-    \n number_of_puzzles	The number of puzzles to be generated, in the range [1,100].\
-    \n";
-}
 
 //FUNCTION TO LOWER MAIN PARAMETERS
 std::string str_tolower(std::string s)
@@ -31,18 +20,6 @@ std::string str_tolower(std::string s)
                    [](unsigned char c) { return std::tolower(c); } // correct
     );
     return s;
-}
-
-/*
-*VERIFYING IF ARGUMENT NUMBERS ARE VALID
-*/
-int verifyArgs(int argc, int min, int max)
-{
-    if (argc == min || argc > max)
-    {
-        Help();
-        return 0;
-    }
 }
 
 int CreateRandom(int n)
@@ -103,6 +80,8 @@ void shadowsAround(std::vector<std::vector<char>> &tabble, int orientation, int 
     {
         for (int j = 0; j <= y; j++)
         {
+            //orientation = 1 -> Horizontal
+            //orientation = 2 -> Vertical
             if (tabble[i][j] == name)
             {
                 tabble[i][j] = 'n';

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator
+CMAKE_SOURCE_DIR = "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build
+CMAKE_BINARY_DIR = "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ bpg: cmake_check_build_system
 bpg/fast:
 	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/build
 .PHONY : bpg/fast
+
+src/MainVerification.o: src/MainVerification.cpp.o
+
+.PHONY : src/MainVerification.o
+
+# target to build an object file
+src/MainVerification.cpp.o:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/MainVerification.cpp.o
+.PHONY : src/MainVerification.cpp.o
+
+src/MainVerification.i: src/MainVerification.cpp.i
+
+.PHONY : src/MainVerification.i
+
+# target to preprocess a source file
+src/MainVerification.cpp.i:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/MainVerification.cpp.i
+.PHONY : src/MainVerification.cpp.i
+
+src/MainVerification.s: src/MainVerification.cpp.s
+
+.PHONY : src/MainVerification.s
+
+# target to generate assembly for a file
+src/MainVerification.cpp.s:
+	$(MAKE) -f CMakeFiles/bpg.dir/build.make CMakeFiles/bpg.dir/src/MainVerification.cpp.s
+.PHONY : src/MainVerification.cpp.s
 
 src/Ship.o: src/Ship.cpp.o
 
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... bpg"
 	@echo "... edit_cache"
+	@echo "... src/MainVerification.o"
+	@echo "... src/MainVerification.i"
+	@echo "... src/MainVerification.s"
 	@echo "... src/Ship.o"
 	@echo "... src/Ship.i"
 	@echo "... src/Ship.s"

@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Ship.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/bpg.dir/src/Ship.cpp.o"
-  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/Tabble.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/bpg.dir/src/Tabble.cpp.o"
-  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/battleship.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/bpg.dir/src/battleship.cpp.o"
-  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/src/main.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator/build/CMakeFiles/bpg.dir/src/main.cpp.o"
+  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/MainVerification.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles/bpg.dir/src/MainVerification.cpp.o"
+  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/Ship.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles/bpg.dir/src/Ship.cpp.o"
+  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/Tabble.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles/bpg.dir/src/Tabble.cpp.o"
+  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/battleship.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles/bpg.dir/src/battleship.cpp.o"
+  "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/main.cpp" "/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/build/CMakeFiles/bpg.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
