@@ -10,8 +10,6 @@
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
 
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Tabble.h
-
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/MainVerification.cpp
@@ -31,12 +29,12 @@ stdlib.h
 -
 time.h
 -
+math.h
+-
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
 ../include/Ship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
-../include/Tabble.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Tabble.h
 ../include/MainVerification.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/MainVerification.h
 
@@ -57,36 +55,12 @@ stdlib.h
 -
 time.h
 -
-../include/battleship.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
-../include/Ship.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
-../include/Tabble.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Tabble.h
-
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/Tabble.cpp
-iostream
--
-iomanip
--
-string.h
--
-ctype.h
--
-vector
--
-algorithm
--
-stdlib.h
--
-time.h
+math.h
 -
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
 ../include/Ship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
-../include/Tabble.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Tabble.h
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/battleship.cpp
 iostream
@@ -105,12 +79,12 @@ stdlib.h
 -
 time.h
 -
+math.h
+-
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
 ../include/Ship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
-../include/Tabble.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Tabble.h
 ../include/MainVerification.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/MainVerification.h
 
@@ -131,12 +105,12 @@ stdlib.h
 -
 time.h
 -
+math.h
+-
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
 ../include/Ship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
-../include/Tabble.h
-/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Tabble.h
 ../include/MainVerification.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/MainVerification.h
 

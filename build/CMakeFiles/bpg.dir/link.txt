@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/bpg.dir/src/MainVerification.cpp.o CMakeFiles/bpg.dir/src/Ship.cpp.o CMakeFiles/bpg.dir/src/Tabble.cpp.o CMakeFiles/bpg.dir/src/battleship.cpp.o CMakeFiles/bpg.dir/src/main.cpp.o  -o bpg 
+/usr/bin/c++    -rdynamic CMakeFiles/bpg.dir/src/MainVerification.cpp.o CMakeFiles/bpg.dir/src/Ship.cpp.o CMakeFiles/bpg.dir/src/battleship.cpp.o CMakeFiles/bpg.dir/src/main.cpp.o  -o bpg 

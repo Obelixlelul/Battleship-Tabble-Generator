@@ -3,29 +3,20 @@
 
 CMakeFiles/bpg.dir/src/MainVerification.cpp.o: ../include/MainVerification.h
 CMakeFiles/bpg.dir/src/MainVerification.cpp.o: ../include/Ship.h
-CMakeFiles/bpg.dir/src/MainVerification.cpp.o: ../include/Tabble.h
 CMakeFiles/bpg.dir/src/MainVerification.cpp.o: ../include/battleship.h
 CMakeFiles/bpg.dir/src/MainVerification.cpp.o: ../src/MainVerification.cpp
 
 CMakeFiles/bpg.dir/src/Ship.cpp.o: ../include/Ship.h
-CMakeFiles/bpg.dir/src/Ship.cpp.o: ../include/Tabble.h
 CMakeFiles/bpg.dir/src/Ship.cpp.o: ../include/battleship.h
 CMakeFiles/bpg.dir/src/Ship.cpp.o: ../src/Ship.cpp
 
-CMakeFiles/bpg.dir/src/Tabble.cpp.o: ../include/Ship.h
-CMakeFiles/bpg.dir/src/Tabble.cpp.o: ../include/Tabble.h
-CMakeFiles/bpg.dir/src/Tabble.cpp.o: ../include/battleship.h
-CMakeFiles/bpg.dir/src/Tabble.cpp.o: ../src/Tabble.cpp
-
 CMakeFiles/bpg.dir/src/battleship.cpp.o: ../include/MainVerification.h
 CMakeFiles/bpg.dir/src/battleship.cpp.o: ../include/Ship.h
-CMakeFiles/bpg.dir/src/battleship.cpp.o: ../include/Tabble.h
 CMakeFiles/bpg.dir/src/battleship.cpp.o: ../include/battleship.h
 CMakeFiles/bpg.dir/src/battleship.cpp.o: ../src/battleship.cpp
 
 CMakeFiles/bpg.dir/src/main.cpp.o: ../include/MainVerification.h
 CMakeFiles/bpg.dir/src/main.cpp.o: ../include/Ship.h
-CMakeFiles/bpg.dir/src/main.cpp.o: ../include/Tabble.h
 CMakeFiles/bpg.dir/src/main.cpp.o: ../include/battleship.h
 CMakeFiles/bpg.dir/src/main.cpp.o: ../src/main.cpp
 
