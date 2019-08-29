@@ -11,6 +11,8 @@
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
+Ship.h
+/home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/Ship.h
 
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/src/MainVerification.cpp
 iostream
@@ -30,6 +32,8 @@ stdlib.h
 time.h
 -
 math.h
+-
+fstream
 -
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
@@ -57,6 +61,8 @@ time.h
 -
 math.h
 -
+fstream
+-
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
 ../include/Ship.h
@@ -80,6 +86,8 @@ stdlib.h
 time.h
 -
 math.h
+-
+fstream
 -
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h
@@ -106,6 +114,8 @@ stdlib.h
 time.h
 -
 math.h
+-
+fstream
 -
 ../include/battleship.h
 /home/rafakroom/Documentos/ti/2semestre/itp/Battleship-Tabble-Generator 2.0/include/battleship.h

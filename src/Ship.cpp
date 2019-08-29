@@ -6,224 +6,167 @@
 #include <algorithm>
 #include <stdlib.h> /* srand, rand */
 #include <time.h>   /* time */
+#include <math.h>
+#include <fstream>
 #include "../include/battleship.h"
 #include "../include/Ship.h"
-#include "../include/Tabble.h"
 
 using namespace std;
 
-Ship::Ship(int length, int x, int y)
+Ship::Ship(int length, int line, int column, vector<int> &impossibility)
 {
+  //Set ship orientation and inside Length
   this->orientation = CreateRandom(2) - 1;
   this->insideLength = length;
-  if (this->orientation == 0)
-  {
-    this->maxLength = (x - length);
-    this->positionX = CreateRandom(this->maxLength);
-    this->positionY = CreateRandom(y);
-  }
-  else
-  {
-    maxLength = (y - length);
-    positionX = CreateRandom(x);
-    positionY = CreateRandom(this->maxLength);
-  }
+  //this->positioningShip(impossibility, length, column, line);
 }
 
-void Ship::changeX(int &positionX, int x, int length)
+int Ship::positioningShip(std::vector<int> &impossibility, int length, int column, int line)
 {
-  positionX = CreateRandom(x - length);
+  this->shipPosition.clear();
+  std::vector<int> tempPossibility;
+
+  //Generate Horizontal limitation
+  if (this->orientation == 1)
+  {
+    for (int i = 1; i <= column * line; i++)
+    {
+      if ((i + length - 1) <= column * ceil((double)i / column))
+      {
+        tempPossibility.push_back(i);
+      }
+    }
+  }
+  //Generate Vertical Limitation
+  else if (this->orientation == 0)
+  {
+    for (int i = 1; i <= column * line; i++)
+    {
+      //formula para max vertical
+      if (i <= (line - length + 1) * column)
+      {
+        tempPossibility.push_back(i);
+      }
+    }
+  }
+
+  //delete impossibility from possibility
+  removeImpossibility(tempPossibility, impossibility);
+
+  if (tempPossibility.empty())
+  {
+    //if theres no possibilities to positioning ship
+    return 0;
+  }
+
+  //randomize a possible position for ship
+  int flag = 1;
+  int count = 0;
+
+  while (flag == 1)
+  {
+    this->shipPosition.clear();
+    flag = 0;
+    count++;
+    this->absPosit = tempPossibility[rand() % tempPossibility.size()];
+
+    if (this->orientation == 1)
+    {
+      for (int i = 0; i < length; i++)
+      {
+        this->shipPosition.push_back(this->absPosit + i);
+      }
+    }
+    else if (this->orientation == 0)
+    {
+      for (int i = 0; i < length; i++)
+      {
+        this->shipPosition.push_back(this->absPosit + i * column);
+      }
+    }
+
+    for (auto i : this->shipPosition)
+    {
+      for (auto j : impossibility)
+      {
+        if (i == j)
+        {
+          flag = 1;
+        }
+      }
+    }
+    count++;
+    //security for try 1000 times and retry
+    if (count > 1000)
+    {
+      this->shipPosition.clear();
+      tempPossibility.clear();
+      return 0;
+    }
+  }
+  tempPossibility.clear();
+  return 1;
 }
 
-void Ship::changeY(int &positionY, int y, int length)
+void Ship::insertShipOnBoard(std::vector<std::string> &board, std::vector<int> &impossibility, int line, int column)
 {
-  positionY = CreateRandom(y - length);
+  for (int i = 0; i < board.size(); i++)
+  {
+    if (i + 1 == this->absPosit && this->orientation == 1)
+    {
+      for (int j = 0; j < this->insideLength; j++)
+      {
+        //put on impossibility array
+        impossibility.push_back(i + 1);
+        if (this->insideLength == 1)
+        {
+          board[i++] = "\u25cf";
+        }
+        else if (j == 0)
+        {
+          board[i++] = "\u25c0";
+        }
+        else if (j == this->insideLength - 1)
+        {
+          board[i++] = "\u25b8";
+        }
+        else
+        {
+          board[i++] = "\u25a0";
+        }
+      }
+      break;
+    }
+    else if (i + 1 == this->absPosit && this->orientation == 0)
+    {
+      for (int j = 0; j < this->insideLength; j++)
+      {
+        //put on impossibility array
+        impossibility.push_back(i + 1 + column * j);
+        this->insideImpossibility.push_back(i + 1 + column * j);
+        if (this->insideLength == 1)
+        {
+          board[i + column * j] = "\u25cf";
+        }
+        else if (j == 0)
+        {
+          board[i + column * j] = "\u25b2";
+        }
+        else if (j == this->insideLength - 1)
+        {
+          board[i + column * j] = "\u25bc";
+        }
+        else
+        {
+          board[i + column * j] = "\u25a0";
+        }
+      }
+    }
+  }
+  shadowsAround(board, impossibility, this->insideImpossibility, this->absPosit, this->orientation, this->insideLength, line, column, this->insideShadows);
 }
 
 void Ship::chageOrientation(int &orientation)
 {
   orientation = CreateRandom(2) - 1;
-}
-
-void Ship::getBattlecruze(std::vector<std::vector<char>> &tabble, int x, int y)
-{
-  this->changeX(this->positionX, x, this->insideLength);
-  this->changeY(this->positionY, y, this->insideLength);
-  this->chageOrientation(this->orientation);
-  for (int i = 1; i <= x; i++)
-  {
-    for (int j = 0; j <= y; j++)
-    {
-      if (i == this->positionX && j == this->positionY && this->orientation == 0)
-      {
-        //Vertical Alocate
-        for (int k = i; k < i + this->insideLength; k++)
-        {
-          tabble[k][j] = 'b';
-        }
-      }
-      else if (i == this->positionX && j == this->positionY && this->orientation == 1)
-      {
-        //Horizontal Alocate
-        for (int k = j; k < j + this->insideLength; k++)
-        {
-          tabble[i][k] = 'b';
-        }
-      }
-    }
-  }
-}
-
-int Ship::getDestroyer(std::vector<std::vector<char>> &tabble, int x, int y)
-{
-  //cout << "input destroyer 1" << endl;
-  int flag(0);
-  int count(0);
-  do
-  {
-    for (int i = 1; i <= x; i++)
-    {
-      for (int j = 1; j <= y; j++)
-      {
-        if (i == this->positionX && j == this->positionY && this->orientation == 0 && tabble[i][j] == '.' && tabble[i + 1][j] == '.' && tabble[i + 2][j] == '.')
-        {
-          //vertically
-          //changing matrix according with boat length
-          for (int k = i; k < i + this->insideLength; k++)
-          {
-            tabble[k][j] = 'd';
-          }
-          flag = 1;
-        }
-        else if (i == this->positionX && j == this->positionY && this->orientation == 1 && tabble[i][j] == '.' && tabble[i][j + 1] == '.' && tabble[i][j + 2] == '.')
-        {
-          // cout << "enter second if horizontally" << endl;
-          //horizontally
-          //changing matrix according with boat length
-
-          for (int k = j; k < j + this->insideLength; k++)
-          {
-            tabble[i][k] = 'd';
-          }
-          flag = 1;
-        }
-      }
-    }
-    if (flag == 0)
-    {
-      this->changeX(this->positionX, x, this->insideLength);
-      this->changeY(this->positionY, y, this->insideLength);
-      this->chageOrientation(this->orientation);
-      count++;
-    } //put couter to infinite loops
-    if (count > 10000)
-    {
-      return 0;
-    }
-  } while (flag == 0);
-  return 1;
-}
-
-int Ship::getCruiser(vector<vector<char>> &tabble, int x, int y)
-{
-  //cout << "input destroyer 1" << endl;
-  int flag(0);
-  int count(0);
-  do
-  {
-    for (int i = 1; i <= x; i++)
-    {
-      for (int j = 1; j <= y; j++)
-      {
-        if (i == this->positionX && j == this->positionY && this->orientation == 0 && tabble[i][j] == '.' && tabble[i + 1][j] == '.')
-        {
-          //vertically
-          //changing matrix according with boat length
-          for (int k = i; k < i + this->insideLength; k++)
-          {
-
-            tabble[k][j] = 'd';
-          }
-          flag = 1;
-        }
-        else if (i == this->positionX && j == this->positionY && this->orientation == 1 && tabble[i][j] == '.' && tabble[i][j + 1] == '.')
-        {
-          // cout << "enter second if horizontally" << endl;
-          //horizontally
-          //changing matrix according with boat length
-
-          for (int k = j; k < j + this->insideLength; k++)
-          {
-            tabble[i][k] = 'd';
-          }
-          flag = 1;
-        }
-      }
-    }
-    if (flag == 0)
-    {
-      //cout << "change randoms to cruiser" << endl;
-      this->changeX(this->positionX, x, this->insideLength);
-      this->changeY(this->positionY, y, this->insideLength);
-      this->chageOrientation(this->orientation);
-      count++;
-    }
-    if (count > 10000)
-    {
-      return 0;
-    }
-
-  } while (flag == 0);
-  return 1;
-}
-
-//PUT SUBMARINE ON TABBLE
-int Ship::getSubmarine(std::vector<std::vector<char>> &tabble, int x, int y)
-{
-  //cout << "input destroyer 1" << endl;
-  int flag(0);
-  int count(0);
-  do
-  {
-    for (int i = 1; i <= x; i++)
-    {
-      for (int j = 1; j <= y; j++)
-      {
-        if (i == this->positionX && j == this->positionY && this->orientation == 0 && tabble[i][j] == '.')
-        {
-          //vertically
-          //changing matrix according with boat length
-          for (int k = i; k < i + this->insideLength; k++)
-          {
-
-            tabble[k][j] = 'd';
-          }
-          flag = 1;
-        }
-        else if (i == this->positionX && j == this->positionY && this->orientation == 1 && tabble[i][j] == '.')
-        {
-          // cout << "enter second if horizontally" << endl;
-          //horizontally
-          //changing matrix according with boat length
-
-          for (int k = j; k < j + this->insideLength; k++)
-          {
-            tabble[i][k] = 'd';
-          }
-          flag = 1;
-        }
-      }
-    }
-    if (flag == 0)
-    {
-      this->changeX(this->positionX, x, this->insideLength);
-      this->changeY(this->positionY, y, this->insideLength);
-      count++;
-    }
-    if (count > 10000)
-    {
-      return 0;
-    }
-  } while (flag == 0);
-  return 1;
 }
