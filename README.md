@@ -58,3 +58,5 @@ Your program will produce **two** types of output files.
 The first one is called `the matrix-format`. It contains an ascii representations of the entire board for each puzzle.
 
 The second format is called `the armada-format`. It contains a compact text representation for each puzzle.
+
+The files will be created on `output` folder
